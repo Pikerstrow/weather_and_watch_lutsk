@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.app-date {
+    width: 300px;
+    height: 100%;
+    float: right;
+    padding-top: 10px;
+    background-color: #919ab4;
+    position: relative;
+    z-index: 99;
+}
+.app-main {
+    position: relative;
+    width: calc(100% - 300px);
+    height: 100%;
+    float: left;
+}
+
+/*SKY AND WEATHER*/
+.sun-day-no-clouds {
+    background: linear-gradient(to bottom, rgb(51, 153, 255) 0%, rgba(51, 153, 255, 0) 60%);
+}
+.day-full-sky-rain {
+    background: linear-gradient(to bottom, rgb(85, 85, 107) 0%, rgba(187, 188, 189, .3) 35%);
+}
+.night {
+    background: linear-gradient(to bottom, rgb(35, 34, 34) 0%, rgba(35, 34, 34, .6) 100%);
+}
+.night-total-clouds {
+    background: linear-gradient(to bottom, rgb(25, 32, 41) 0%, rgba(25, 32, 41, .6) 300%);
+}
+
+.rain-drop {
+    width: 2px;
+    height: 18px;
+    display: block;
+    background: rgb(51, 153, 255);
+    background: linear-gradient(to bottom, rgba(51, 153, 255, 0) 0%, rgb(51, 153, 255) 100%);
+    position: absolute;
+    border-radius: 40%;
+}
+.sun {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    left: 0%;
+    top: 2%;
+    box-shadow: 0px 0px 50px yellow;
+    z-index: 3;
+}
+.moon {   
+    top: 2%;    
+    width: 100px !important;
+    height: 100px !important;
+    z-index: 3;
+}
+.snow {
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(51, 153, 255, 0) 0%, rgb(51, 153, 255) 100%);
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes disapper {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+.star {
+    background-color: rgb(160, 160, 63);
+    display: block;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgb(160, 160, 63);
+}
+
+/*INFO PANEL*/
+.weather-forecast,
+.city-name-container {
+    width: 240px;
+    margin: 20px auto;
+    border: 2px solid #e4e4e4;
+    padding: 5px;
+}
+
+.weather-ul {
+    color: #e4e4e4;
+    font-size: 17px;
+    list-style: none;
+    padding-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.weather-ul li {
+    margin-top: 3px;
+}
+
+
+.city-name-container {
+    text-align: center;
+}
+
+.city-name-container p {
+    color: #e4e4e4;
+    font-size: 35px;
+    margin: 5px 0;
+}
+
+/*INFO PANEL: WATCH*/
+#watch-body {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #e4e4e4;
+    position: relative;
+    background-color: #919ab4;
+    margin: 10px auto;
+    padding: 0;
+}
+#watch-body .body-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    top: calc(125px - 10px);
+    left: calc(125px - 10px);
+}
+#watch-body .hour-mark {
+    display: block;
+    position: absolute;
+    left: 124px;
+    top: 3px;
+    background-color: transparent;
+    height: 240px;
+    width: 2px;
+}
+.hour-mark:after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 14px;
+    top: 3px;
+    position: absolute;
+    background-color: #e4e4e4;
+}
+.twelve-hours,
+.three-hours,
+.six-hours,
+.nine-hours {
+    position: absolute;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    color: #e4e4e4;
+}
+.twelve-hours {
+    top: -3px;
+    left: calc(125px - 20px);
+}
+.three-hours {
+    top: calc(125px - 20px);
+    right: 3px;
+}
+.six-hours {
+    bottom: 3px;
+    left: calc(125px - 20px);
+}
+.nine-hours {
+    top: calc(125px - 20px);
+    left: 3px;
+}
+.seconds-arrow,
+.minutes-arrow,
+.hours-arrow {
+    display: block;
+    position: absolute;
+    background-color: #e4e4e4;
+    transform-origin: bottom center;
+}
+.seconds-arrow {
+    height: 105px;
+    width: 2px;
+    left: 124px;
+    top: 20px;
+}
+.minutes-arrow {
+    height: 95px;
+    width: 4px;
+    left: 123px;
+    top: 30px;
+}
+.hours-arrow {
+    height: 75px;
+    width: 8px;
+    left: 121px;
+    top: 50px;
+}
+.date-container {
+    text-align: center;
+}
+
+/*DATE*/
+.day-container,
+.month-container,
+.year-container {
+    width: auto;
+    height: auto;
+    background-color: #919ab4;
+    color: #e4e4e4;
+    font-size: 30px;
+    padding: 0px 5px;
+}
+
+/*CASTLE*/
+.castle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80% !important;
+    height: auto;
+}
+
+/*No mobile phones screensaver and preloader*/
+.no-mobile, .preloader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    z-index: 999;
+}
+.no-mobile-sign {
+    width: 300px;    
+} 
+
